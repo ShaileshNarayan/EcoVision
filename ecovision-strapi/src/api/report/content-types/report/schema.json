@@ -1,0 +1,99 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reports",
+  "info": {
+    "singularName": "report",
+    "pluralName": "reports",
+    "displayName": "report",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "photo": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "reportstatus": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "assigned",
+        "resolved",
+        "closed"
+      ]
+    },
+    "wasteType": {
+      "type": "enumeration",
+      "enum": [
+        "General Waste",
+        "Plastic",
+        "Paper",
+        "Glass",
+        "Metal",
+        "E-Waste",
+        "Organic",
+        "Construction Waste",
+        "Hazardous Waste"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "submittedBy": {
+      "type": "string"
+    },
+    "emailId": {
+      "type": "string"
+    },
+    "driver": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::driver.driver",
+      "inversedBy": "reports"
+    },
+    "assignedAt": {
+      "type": "datetime"
+    },
+    "proofMedia": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "proofLatitude": {
+      "type": "decimal"
+    },
+    "proofLongitude": {
+      "type": "decimal"
+    },
+    "proofSubmittedAt": {
+      "type": "datetime"
+    },
+    "proofDistanceMeters": {
+      "type": "decimal"
+    },
+    "proofVerified": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

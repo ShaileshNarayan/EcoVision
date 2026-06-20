@@ -1,0 +1,13 @@
+import apiClient from "./apiClient"
+import type { LoginResponse } from "../types/auth"
+
+export const loginDriver = async (
+  email: string,
+  password: string
+): Promise<LoginResponse> => {
+  const response = await apiClient.post<LoginResponse>(
+    "/auth/login",
+    { email, password }
+  )
+  return response.data
+}

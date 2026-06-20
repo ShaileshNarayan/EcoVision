@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "drivers",
+  "info": {
+    "singularName": "driver",
+    "pluralName": "drivers",
+    "displayName": "Driver",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "driverStatus": {
+      "type": "enumeration",
+      "enum": [
+        "available",
+        "unavailable",
+        "on_trip",
+        "off_duty",
+        "suspended"
+      ],
+      "default": "available"
+    },
+    "assigned_count": {
+      "type": "integer",
+      "default": 0
+    },
+    "max_active_assignments": {
+      "type": "integer",
+      "default": 4
+    },
+    "last_assigned_at": {
+      "type": "datetime"
+    },
+    "license_number": {
+      "type": "string"
+    },
+    "documents": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "location": {
+      "type": "blocks"
+    },
+    "availability_schedule": {
+      "type": "blocks"
+    },
+    "notes": {
+      "type": "richtext"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "reports": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::report.report",
+      "mappedBy": "driver"
+    }
+  }
+}

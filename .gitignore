@@ -1,0 +1,27 @@
+# IDE
+.idea/
+.vscode/
+
+# Environment files
+.env
+**/.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Database backups
+*.sql
+*.bak
+*.backup
+
+# Archives
+*.zip
+*.rar
+*.7z
+
+# Build caches
+**/.cache/

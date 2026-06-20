@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core surfaces */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    /* PRIMARY → BLUE (Assigned / Main actions) */
+    --primary: 217 91% 60%;              /* blue-500 */
+    --primary-foreground: 0 0% 100%;
+
+    /* SECONDARY → soft gray */
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    /* MUTED text */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* ACCENT → hover / subtle highlight */
+    --accent: 217 91% 95%;
+    --accent-foreground: 217 91% 60%;
+
+    /* STATUS COLORS */
+    --success: 142 71% 45%;   /* green-500 */
+    --warning: 38 92% 50%;    /* amber-500 */
+    --danger: 0 84% 60%;      /* red-500 */
+
+    --border: 214 32% 91%;
+    --ring: 217 91% 60%;
+    --radius: 0.5rem;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-border: hsl(0 70% 45%);
+    --destructive-bg: hsla(0, 84%, 60%, 0.137); 
+    --destructive-hover: hsla(0, 84%, 60%, 0.4);
+  }
+  .dark {
+  /* Core surfaces (unchanged) */
+  --background: 220 20% 10%;
+  --foreground: 220 15% 95%;
+
+  --card: 220 15% 14%; 
+  --card-foreground: 220 15% 95%; 
+  --card-shadow: 0px 6px 16px hsl(220 20% 5% / 0.6); /* Borders & dividers */ 
+  --border: 220 15% 20%; --ring: 150 55% 55%;
+
+  /* 🔵 PRIMARY — SAME BLUE FAMILY AS LIGHT MODE */
+  --primary: 210 75% 45%;               /* blue, slightly softer */
+  --primary-foreground: 0 0% 100%;
+  --primary-border: hsla(217, 85%, 55%, 0.411);
+
+  /* Focus / ring uses same blue */
+  --ring: 217 85% 65%;
+
+  /* Secondary & muted (unchanged) */
+  --secondary: 220 12% 22%;
+  --secondary-foreground: 220 15% 95%;
+
+  --muted: 220 12% 20%;
+  --muted-foreground: 220 10% 65%;
+
+  /* Accent — neutral surface lift, not green */
+  --accent: 220 15% 18%;
+  --accent-foreground: 217 85% 70%;
+
+  /* ✅ GREEN IS NOW SEMANTIC (SUCCESS), NOT BRAND */
+  --success: 150 55% 50%;
+  --warning: 38 92% 55%;
+  --danger: 0 70% 55%;
+
+  /* Buttons */
+  --button-outline: hsl(220 15% 25% / 0.6);
+  --secondary-border: hsl(220 12% 25% / 0.6);
+  --destructive-border: hsl(0 70% 45% / 0.6);
+  --destructive: 0 70% 50%;        /* slightly darker red */
+  --destructive-foreground: 0 0% 100%;
+  --destructive-bg: hsla(0, 84%, 60%, 0.137);
+  /* Elevation overlays */
+  --elevate-1: rgba(255, 255, 255, 0.04);
+  --elevate-2: rgba(255, 255, 255, 0.08);
+  
+  /* Button shadows */
+  --button-shadow: 0px 4px 12px hsl(220 20% 5% / 0.45);
+  --button-shadow-active: 0px 2px 6px hsl(220 20% 5% / 0.6);
+}
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+#nprogress .bar {
+  background: #0e7c66;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #0e7c66, 0 0 5px #0e7c66;
+}
+
