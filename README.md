@@ -111,7 +111,7 @@ EcoVision follows a modular multi-tier architecture integrating citizen particip
 
 * Google Maps Integration
 * Geolocation Services
-* REST APIs
+* Capacitor
 
 ---
 
@@ -352,6 +352,109 @@ Run:
 ```bash
 npm run dev
 ```
+
+---
+
+## Android Deployment (Driver Module)
+
+The Driver Module is built as a React Progressive Web Application and wrapped using Capacitor to enable deployment on Android devices while maintaining a single shared codebase.
+
+### Prerequisites
+
+Install the following software:
+
+* Node.js
+* Android Studio
+* Android SDK
+* Java Development Kit (JDK)
+
+Enable **Developer Options** and **USB Debugging** on the Android device.
+
+---
+
+### Build the Driver Application
+
+Navigate to the driver module:
+
+```bash
+cd eco-vision-driver
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Generate a production build:
+
+```bash
+npm run build
+```
+
+Synchronize the Capacitor Android project:
+
+```bash
+npx cap sync android
+```
+
+---
+
+### Open Android Studio
+
+Launch the Android project:
+
+```bash
+npx cap open android
+```
+
+This command opens the Capacitor Android project inside Android Studio.
+
+---
+
+### Run on a Physical Android Device
+
+1. Connect an Android device using a USB cable.
+2. Enable USB Debugging in Developer Options.
+3. Authorize the computer when prompted on the device.
+4. Open Android Studio.
+5. Select the connected device from the device selector.
+6. Click **Run App**.
+
+Android Studio will build and install the Driver application directly onto the device.
+
+---
+
+### Run on an Android Emulator
+
+1. Open Android Studio.
+2. Create or start an Android Virtual Device (AVD).
+3. Select the emulator from the device selector.
+4. Click **Run App**.
+
+---
+
+### Updating the Android Application
+
+Whenever frontend code changes:
+
+```bash
+npm run build
+npx cap sync android
+```
+
+Then rebuild and redeploy through Android Studio.
+
+---
+
+### Capacitor Integration
+
+Capacitor bridges web technologies and native Android capabilities, allowing the Driver Module to be deployed as both:
+
+* Progressive Web Application (PWA)
+* Native Android Application
+
+This approach enables a single React codebase to support multiple deployment targets while maintaining a consistent user experience.
 
 ---
 
